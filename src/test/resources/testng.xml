@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="DemoQA UI Tests Suite" verbose="1">
+    
+    <!-- Тесты для раздела Elements -->
+    <test name="Elements Tests" preserve-order="true">
+        <classes>
+            <class name="com.example.tests.TextBoxTest"/>
+            <class name="com.example.tests.ButtonsTest"/>
+            <class name="com.example.tests.UploadDownloadTest"/>
+        </classes>
+    </test>
+    
+    <!-- Тесты для раздела Alerts, Frame & Windows -->
+    <test name="Alerts and Windows Tests" preserve-order="true">
+        <classes>
+            <class name="com.example.tests.AlertsTest"/>
+            <class name="com.example.tests.BrowserWindowsTest"/>
+        </classes>
+    </test>
+    
+    <!-- Тесты для раздела Interactions -->
+    <test name="Interactions Tests" preserve-order="true">
+        <classes>
+            <class name="com.example.tests.DragAndDropTest"/>
+        </classes>
+    </test>
+    
+    <!-- Группы тестов -->
+    <test name="Smoke Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.tests.TextBoxTest"/>
+            <class name="com.example.tests.ButtonsTest"/>
+        </classes>
+    </test>
+    
+    <!-- Регрессионные тесты -->
+    <test name="Regression Tests" preserve-order="true">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.example.tests.TextBoxTest"/>
+            <class name="com.example.tests.ButtonsTest"/>
+            <class name="com.example.tests.UploadDownloadTest"/>
+            <class name="com.example.tests.AlertsTest"/>
+            <class name="com.example.tests.BrowserWindowsTest"/>
+            <class name="com.example.tests.DragAndDropTest"/>
+        </classes>
+    </test>
+    
+</suite>
